@@ -25,7 +25,7 @@ ui <- fluidPage(theme=shinytheme("yeti"),
                 
 )
 
-server<-function(input,output){
+server<-function(input,output, session){
   
   
   
