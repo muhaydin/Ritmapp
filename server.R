@@ -1,3 +1,10 @@
+
+library("shiny")
+library("shinythemes")
+library("shinyalert")
+library("shinyWidgets")
+library("readr")
+
 server<-function(input,output){
   
   
@@ -8,7 +15,7 @@ server<-function(input,output){
     download.file(url, "file.txt" )
     df<-read.csv("file.txt", header=FALSE, stringsAsFactors=FALSE, sep = c(","," "))[-1,]
     colnames(df)<-c("DateTime","Q1","Q2","Q3","Q4","Fitted", "Actual")
-    shinyalert("Downloaded!", "Related RÝTM estimations downloaded successfully.", type = "success")
+    shinyalert("Downloaded!", "Related RÃTM estimations downloaded successfully.", type = "success")
     write.csv(df, "df_downloaded.csv", row.names=FALSE)
   })
   
@@ -27,4 +34,5 @@ server<-function(input,output){
     )
     
   })
+
 }
